@@ -74,6 +74,52 @@ It empowers businesses and technical teams to deploy specialized AI Voice Agents
 
 ---
 
+## 🏗️ End-to-End System Architecture
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                CLIENT / BROWSER                                 │
+│  Next.js 16 (React 19) • Web Audio API Analyser • Full-Duplex WebRTC Streaming   │
+└────────┬───────────────────────────────┬────────────────────────────────┬───────┘
+         │ (1) Live Microphone Audio     │ (4) Synthetic TTS Audio Stream │
+         ▼                               ▲                                │
+┌──────────────────────────────────────────────────────────────────┐      │
+│                PROPRIETARY AI VOICE BACKEND (FASTAPI)            │      │
+│  ┌────────────────────────┐      ┌─────────────────────────────┐ │      │
+│  │ Streaming STT Pipeline │      │ Neural Edge TTS Synthesizer │ │      │
+│  │ (Groq Whisper-Turbo /  │      │ (Bilingual Urdu/English     │ │      │
+│  │  Custom VAD Cutoff)    │      │  Phonetic Mapping)          │ │      │
+│  └───────────┬────────────┘      └──────────────▲──────────────┘ │      │
+│              ▼                                  │                │      │
+│  ┌──────────────────────────────────────────────┴──────────────┐ │      │
+│  │           Conversational Agent Graph Orchestrator            │ │      │
+│  │   • Multi-Turn Context Tracking • Active Interruption VAD    │ │      │
+│  │   • Live Webhook / CRM Function Calling Dispatcher          │ │      │
+│  └───────────┬──────────────────────────────────▲──────────────┘ │      │
+│              ▼                                  │                │      │
+│  ┌──────────────────────────────────────────────┴──────────────┐ │      │
+│  │                   Hybrid RAG Retrieval Layer                │ │      │
+│  │    • Vector Cosine Search (pgvector)                        │ │      │
+│  │    • Entity Knowledge Graph (Hierarchical Chunk Relations)  │ │      │
+│  └─────────────────────────────────────────────────────────────┘ │      │
+└────────────────────────────────────────┬─────────────────────────┘      │
+                                         │                                │
+                                         ▼                                ▼
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                           DATABASE & AUTH INFRASTRUCTURE                        │
+│   • Supabase PostgreSQL (pgvector embeddings, multi-tenant agent_configs)       │
+│   • NestJS Auth Service (JWT RBAC, Organization Isolation, Webhook Management) │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+> [!IMPORTANT]  
+> **Proprietary Backend & Architecture Notice**  
+> This public repository contains the **Frontend Client Application & WebRTC Voice Interface**. The backend microservices (`ai-service` containing the proprietary Hybrid Graph RAG orchestrator, full-duplex WebSocket stream handlers, and `auth-service` multi-tenant RBAC core) represent proprietary commercial intellectual property and are hosted within private infrastructure.  
+> 
+> Technical architecture reviews, end-to-end API specifications, or live production demonstrations can be provided upon direct request for verified portfolio evaluation or hiring inquiries.
+
+---
+
 ## 🛠️ Technology Stack
 
 | Layer | Technologies |
