@@ -1,14 +1,16 @@
-# 🎙️ VocalIQ — Enterprise Autonomous AI Voice Agent Platform
+# 🎙️ VocalIQ — AI Voice Customer Experience Platform
+
+> **Real-Time Bilingual Voice AI • Multi-Agent Workflows • Knowledge-Grounded Conversations**
 
 ![Next.js](https://img.shields.io/badge/Next.js-16.3.2-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.2.8-blue?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Portfolio%20Showcase-purple?style=for-the-badge)
 
-**VocalIQ** is an enterprise-grade, full-duplex conversational AI voice platform engineered for multi-campaign voice workflows, real-time voice streaming, and localized bilingual intelligence (Native Urdu & English). 
+**VocalIQ** is an AI voice customer experience platform engineered for multi-campaign voice workflows, real-time voice streaming, and localized bilingual intelligence (Native Urdu & English). 
 
-It empowers businesses and technical teams to deploy specialized AI Voice Agents capable of active human-like conversations, adaptive voice activity detection (VAD), barge-in interruption handling, and dynamic knowledge base (RAG) groundings.
+It empowers businesses and technical teams to configure specialized AI Voice Agents capable of active conversations, adaptive voice activity detection (VAD), barge-in interruption handling, and dynamic knowledge base (RAG) groundings.
 
 ---
 

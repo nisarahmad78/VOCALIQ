@@ -1,6 +1,8 @@
 # VocalIQ — AI Voice Customer Experience Platform
 
-A high-performance conversational AI voice platform engineered for real-time, bidirectional customer interactions, localized bilingual intelligence (Native Urdu & English), scoped knowledge retrieval, and modular multi-agent orchestration.
+> **Real-Time Bilingual Voice AI • Multi-Agent Workflows • Knowledge-Grounded Conversations**
+
+A concise professional overview of the project, architecture, current implementation, and portfolio showcase.
 
 ---
 
