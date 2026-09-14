@@ -12,6 +12,36 @@ It empowers businesses and technical teams to deploy specialized AI Voice Agents
 
 ---
 
+## 📸 Product Showcases & Screenshots
+
+### 1. Multi-Agent Campaign & Persona Studio
+> *Create, customize, and switch between specialized voice agents (Candidate Hiring Representative, Inbound Sales, IT Helpdesk, Healthcare Receptionist) with scoped Knowledge Base assignments.*
+
+![Multi-Agent Dashboard](public/screenshots/multi_agent_dashboard.png)
+
+---
+
+### 2. Full-Duplex Live Voice Testing & Real-Time Transcripts
+> *Interactive WebRTC voice testing environment featuring active speech detection, configurable conversational pause tolerance (1.5s - 3.0s), adaptive ambient noise filtering, and bilingual Urdu/English live transcription.*
+
+![Live Voice Test Calls](public/screenshots/live_voice_test_calls.png)
+
+---
+
+### 3. Knowledge Graph Explorer & Hybrid RAG Retrieval
+> *Interactive Graph RAG visualizer showing entity bridges, cross-document semantic relations, and hierarchical chunk embeddings powering zero-hallucination agent responses.*
+
+![Knowledge Graph RAG Explorer](public/screenshots/knowledge_graph_rag.png)
+
+---
+
+### 4. Interactive Cellular Softphone & Live Telephony Pipeline
+> *Zero-cost browser-based virtual phone dialer simulating carrier cellular calls with live TwiML protocol inspection and automated call persistence.*
+
+![Interactive Softphone Dialer](public/screenshots/interactive_softphone_dialer.png)
+
+---
+
 ## 🌟 Key Highlights & Engineering Features
 
 ### 1. 🤖 Multi-Agent Campaign Architecture
@@ -62,6 +92,9 @@ It empowers businesses and technical teams to deploy specialized AI Voice Agents
 ## 📁 Repository Structure
 
 ```text
+├── public/
+│   ├── screenshots/            # High-resolution platform UI showcases
+│   └── icons & svgs
 ├── src/
 │   ├── app/
 │   │   ├── (auth)/             # Authentication (Login, Signup, Reset Password)
@@ -88,7 +121,6 @@ It empowers businesses and technical teams to deploy specialized AI Voice Agents
 │       ├── ai-client.ts        # Typed API client for Agent & RAG endpoints
 │       ├── api-client.ts       # Authenticated HTTP interceptor
 │       └── tools-client.ts     # Webhook CRM actions client
-├── public/                     # Static assets & SVG icons
 ├── package.json
 └── tsconfig.json
 ```
