@@ -1,36 +1,155 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎙️ VocalIQ — Enterprise Autonomous AI Voice Agent Platform
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-16.3.2-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19.2.8-blue?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)
 
-First, run the development server:
+**VocalIQ** is an enterprise-grade, full-duplex conversational AI voice platform engineered for multi-campaign voice workflows, real-time voice streaming, and localized bilingual intelligence (Native Urdu & English). 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+It empowers businesses and technical teams to deploy specialized AI Voice Agents capable of active human-like conversations, adaptive voice activity detection (VAD), barge-in interruption handling, and dynamic knowledge base (RAG) groundings.
+
+---
+
+## 🌟 Key Highlights & Engineering Features
+
+### 1. 🤖 Multi-Agent Campaign Architecture
+- **Multi-Tenant / Multi-Agent**: Create and manage multiple distinct AI voice personas within a single workspace.
+- **Enterprise Role Presets**:
+  - *Candidate Portfolio & Hiring Representative* (Interactive CV & Technical Representative)
+  - *Enterprise Customer Support Specialist* (L1/L2 SLA Resolution)
+  - *Technical Support & IT Helpdesk Engineer*
+  - *Inbound Sales & Product Consultant*
+  - *Medical Clinic Appointment Receptionist*
+- **Scoped Knowledge Base Assignment**: Assign specific vector & graph knowledge bases to specific agents to eliminate hallucination and isolate company domains.
+
+### 2. ⚡ Real-Time Full-Duplex Voice Engine
+- **Sub-Second Latency Pipeline**: Seamless integration of streaming Speech-to-Text (STT), LLM reasoning, and neural Text-to-Speech (TTS).
+- **Adaptive Voice Activity Detection (VAD)**: Dynamic room noise calibration preventing phantom triggers and false starts.
+- **Natural Speaking Pause Buffer**: Configurable conversational pause tolerance (1.5s – 3.0s) so natural mid-sentence pauses are never cut off.
+- **Barge-in Interruption**: Real-time Web Audio API energy monitoring immediately cuts off the agent's voice the millisecond the caller starts speaking.
+
+### 3. 🌐 Dual-Voice Bilingual Localization (Urdu & English)
+- **Pakistani Urdu Optimization**:
+  - Native Urdu script synthesis (`ur-PK-UzmaNeural` & `ur-PK-AsadNeural`) preventing broken phonetic output.
+  - Smart acronym transliteration (e.g., `RAG` $\rightarrow$ `ریگ`, `AI` $\rightarrow$ `اے آئی`, `LLM` $\rightarrow$ `ایل ایل ایم`).
+  - Native Whisper prompts filtering phantom background tokens (e.g., silence `موسیقی` tokens).
+- **Conversational Intelligence**: Agents practice active listening, acknowledge corrections, and proactively keep dialogue open with natural follow-ups.
+
+### 4. 📊 Enterprise Telephony & CRM Integration
+- **Zero-Cost WebRTC / Softphone Simulator**: Browser-based interactive cellular dialer simulating live telecom carriers.
+- **Live Actions & Webhook Tools**: Configure outbound webhooks allowing agents to trigger live calendar bookings, CRM updates, or order lookups during phone calls.
+- **Complete Call Analytics & Persistence**: Automated transcripts, call duration logging, resolution tagging, and user feedback ratings stored in PostgreSQL with pgvector.
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technologies |
+| :--- | :--- |
+| **Frontend Framework** | [Next.js 16](https://nextjs.org/) (App Router, Server Actions, React 19) |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) (Strict Mode) |
+| **Styling & Design System** | [Tailwind CSS v4](https://tailwindcss.com/), Radix UI Primitives, Lucide Icons |
+| **State & Data Fetching** | React Hooks, Context API, Sonner Toasts |
+| **Audio Processing** | Web Audio API (AnalyserNode, FFT time-domain RMS tracking, MediaStream) |
+| **Speech-to-Text (STT)** | Groq Cloud Whisper-large-v3-turbo / Local faster-whisper |
+| **Text-to-Speech (TTS)** | Microsoft Edge Neural Voice Engine (Dual English & Urdu profiles) |
+| **Backend Integration** | Python FastAPI (RAG & Graph Engine), NestJS (Auth & Multi-tenancy) |
+
+---
+
+## 📁 Repository Structure
+
+```text
+├── src/
+│   ├── app/
+│   │   ├── (auth)/             # Authentication (Login, Signup, Reset Password)
+│   │   ├── admin/              # Superadmin portal (Users, Workspaces, Announcements)
+│   │   ├── dashboard/
+│   │   │   ├── agent/          # Multi-Agent Management (CRUD, Role Presets, KBs)
+│   │   │   ├── conversations/  # Past call recordings, transcripts & analytics
+│   │   │   ├── knowledge-bases/# Document vector indexing & graph RAG explorer
+│   │   │   ├── test-calls/     # Full-duplex interactive voice test suite & dialer
+│   │   │   ├── settings/       # Organization settings & Live Webhook tools
+│   │   │   └── page.tsx        # Dashboard metrics overview
+│   │   ├── layout.tsx          # Root layout & providers
+│   │   └── page.tsx            # High-conversion product landing page
+│   ├── components/
+│   │   ├── dashboard/          # AppSidebar, SiteHeader, Greeting, Onboarding
+│   │   ├── knowledge/          # Interactive Knowledge Graph Visualizer & RAG Chat
+│   │   ├── landing/            # Hero, Features, Pricing, How It Works
+│   │   ├── settings/           # Team, Billing, Activity, Webhook management
+│   │   └── ui/                 # Reusable Radix UI design system components
+│   ├── hooks/
+│   │   ├── use-voice-call-v2.ts# Core full-duplex WebRTC/VAD audio engine hook
+│   │   └── use-mobile.ts       # Responsive viewport hook
+│   └── lib/
+│       ├── ai-client.ts        # Typed API client for Agent & RAG endpoints
+│       ├── api-client.ts       # Authenticated HTTP interceptor
+│       └── tools-client.ts     # Webhook CRM actions client
+├── public/                     # Static assets & SVG icons
+├── package.json
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Quick Start & Local Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Prerequisites
+- **Node.js**: v18.18.0 or higher
+- **Package Manager**: `npm`, `yarn`, or `pnpm`
 
-## Learn More
+### 2. Installation
+Clone the repository and install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+git clone https://github.com/nisarahmad78/VOCALIQ.git
+cd VOCALIQ
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Environment Configuration
+Create a `.env.local` file in the root directory:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```env
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_AUTH_API_URL=http://localhost:3001
+NEXT_PUBLIC_AI_API_URL=http://localhost:8000
+```
 
-## Deploy on Vercel
+### 4. Run Development Server
+```bash
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🧪 E2E Testing & Quality Assurance
+
+Run Playwright end-to-end test suites:
+
+```bash
+# Run all end-to-end tests
+npm run test:e2e
+
+# Run TypeScript type validation
+npx tsc --noEmit
+```
+
+---
+
+## 👨‍💻 Author & Contact
+
+**Nisar Ahmad**  
+*AI Systems & Full-Stack Engineer*  
+- **GitHub**: [@nisarahmad78](https://github.com/nisarahmad78)  
+- **Expertise**: Conversational Voice Agents, Full-Duplex WebRTC, RAG Systems, Distributed AI Pipelines
+
+---
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
