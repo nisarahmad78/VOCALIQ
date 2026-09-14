@@ -175,13 +175,13 @@ export default function TestCallsPage() {
         </div>
         <div className="flex flex-wrap items-center gap-2">
           {agents.length > 0 && (
-            <div className="w-56">
+            <div className="w-72">
               <Select
                 value={selectedAgentId}
                 onValueChange={handleAgentChange}
                 disabled={isActive}
               >
-                <SelectTrigger className="h-9 font-medium" aria-label="Target Agent">
+                <SelectTrigger className="h-9 font-medium text-xs [&>span]:truncate" aria-label="Target Agent">
                   <SelectValue placeholder="Select Agent to Test" />
                 </SelectTrigger>
                 <SelectContent>
