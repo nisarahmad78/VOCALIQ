@@ -243,3 +243,12 @@ npx tsc --noEmit
 
 ## 📄 License
 This project is open-source and available under the [MIT License](LICENSE).
+
+---
+**More projects by Nisar Ahmad** — [GitHub profile](https://github.com/nisarahmad78) · [Portfolio site](https://nisarahmad78.github.io)
+- [VOCALIQ — AI Voice Customer Experience Platform](https://github.com/nisarahmad78/VOCALIQ)
+- [RAG Document Q&A](https://github.com/nisarahmad78/rag-document-qa)
+- [LangGraph AI Agent](https://github.com/nisarahmad78/langgraph-ai-agent)
+- [MCP Server Suite](https://github.com/nisarahmad78/mcp-server-suite)
+- [AI Support Desk](https://github.com/nisarahmad78/ai-support-desk)
+- [LLM Gateway](https://github.com/nisarahmad78/llm-gateway)
