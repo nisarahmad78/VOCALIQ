@@ -2,6 +2,8 @@
 
 > **Real-Time Bilingual Voice AI • Multi-Agent Workflows • Knowledge-Grounded Conversations**
 
+![VOCALIQ](vocaliq-cover.jpg)
+
 ![Next.js](https://img.shields.io/badge/Next.js-16.3.2-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.2.8-blue?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)
